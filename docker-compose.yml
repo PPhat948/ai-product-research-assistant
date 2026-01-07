@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: research_assistant
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount current directory to persist DB and Chroma
+      - .:/app
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - SERPER_API_KEY=${SERPER_API_KEY}
+    restart: unless-stopped

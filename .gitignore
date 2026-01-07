@@ -1,0 +1,50 @@
+# Environment Variables (CRITICAL)
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Database & Vector Store (Local artifacts)
+chroma_db/
+products.db
+*.sqlite3
+
+# Testing & Cache
+.pytest_cache/
+.coverage
+htmlcov/
+.deepeval/
+
+# IDE & OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

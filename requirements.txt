@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+sqlalchemy
+pandas
+pydantic
+requests
+locust
+python-dotenv
+chromadb
+langchain
+langchain-community
+langchain-core
+langchain-google-genai
+langchain-chroma
