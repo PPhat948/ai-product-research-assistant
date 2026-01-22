@@ -50,9 +50,12 @@ async def startup_event():
     if os.path.exists(csv_path):
         product_data_manager.load_data(csv_path)
         
-        # 3. Ingest Data into Vector Store
-        df = product_data_manager.get_df()
-        vector_store_manager.ingest_data(df)
+        # 3. Ingest Data into Vector Store (Optional)
+        if os.getenv("SKIP_INGESTION", "false").lower() == "true":
+            print("Skipping vector store ingestion (SKIP_INGESTION=true).")
+        else:
+            df = product_data_manager.get_df()
+            vector_store_manager.ingest_data(df)
     else:
         print("Warning: products_catalog.csv not found.")
 

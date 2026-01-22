@@ -1,0 +1,33 @@
+# Exclude version control and configuration
+.gcloudignore
+.git
+.gitignore
+
+# Exclude secrets (CRITICAL)
+.env
+.env.example
+
+# Exclude documentation and architecture diagrams
+*.md
+architecture/
+LICENSE
+
+# Exclude development tools and tests
+tests/
+docker-compose.yml
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Exclude raw data (assuming products.db and chroma_db are the production artifacts)
+# If 'data/' contains the raw CSVs used to generate the DBs, we don't need them in the image
+data/
+
+# Explicitly ensure these are INCLUDED (cloud build ignores everything by default if not careful with logic, 
+# but here we are using a blacklist approach, so everything not listed above is INCLUDED)
+# Included:
+# - src/
+# - chroma_db/
+# - products.db
+# - Dockerfile
+# - requirements.txt
